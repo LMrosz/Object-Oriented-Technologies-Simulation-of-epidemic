@@ -1,5 +1,5 @@
-﻿public class Polar2DAdapter implements IPolar2D, IVector {
-    private Vector2D srcVector;
+public class Polar2DAdapter implements IPolar2D, IVector {
+    private final Vector2D srcVector;
 
     public Polar2DAdapter(Vector2D srcVector) {
         this.srcVector = srcVector;

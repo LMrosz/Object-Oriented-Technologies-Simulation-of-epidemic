@@ -1,4 +1,4 @@
-﻿public interface IVector {
+public interface IVector {
     double abs();
 
     double cdot(IVector param);
