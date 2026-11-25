@@ -62,7 +62,9 @@ public class Person {
     public double distanceTo(Person other) {
         double[] a = position.getComponents();
         double[] b = other.position.getComponents();
-        return Math.hypot(a[0] - b[0], a[1] - b[1]);
+        double dx = a[0] - b[0];
+        double dy = a[1] - b[1];
+        return Math.sqrt(dx * dx + dy * dy); // odległość euklidesowa: sqrt(dx^2 + dy^2)
     }
 
     public int getId() {

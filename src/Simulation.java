@@ -177,7 +177,7 @@ public class Simulation {
         return n;
     }
 
-    // ---------- Memento (Originator) ----------
+    // ---------- Memento ----------
 
     public SimulationMemento createMemento() {
         List<PersonSnapshot> snapshots = new ArrayList<>();
