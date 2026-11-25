@@ -1,4 +1,6 @@
-public class SimulationConfig {
+public class SimulationConfig implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
+
     private final double areaWidth;
     private final double areaHeight;
     private final double maxSpeed;
@@ -13,10 +15,12 @@ public class SimulationConfig {
     private final double spawnRate;
     private final double immuneRatio;
 
-    // Wartości z polecenia. immuneRatio = 0,1 (przypadek 2); przypadek 1 to immuneRatio = 0.
-    // spawnRate = 0,01 to wartość startowa (szansa na krok) do dobrania doświadczalnie.
+    // Wartości z polecenia (prędkość, promień, czasy, 10% zarażonych na wejściu, 50% wyjść).
+    // Obszar 50x50 m, spawnRate = 0,065 (szansa na nowego osobnika w kroku) i immuneRatio = 0,3 (przypadek 2)
+    // dobrane doświadczalnie tak, by populacja utrzymywała się na poziomie ok. 100 osób.
+    // Przypadek 1 (bez odporności) to ten sam zestaw z immuneRatio = 0.
     public SimulationConfig() {
-        this(100, 100, 2.5, 25, 0.5, 0.1, 2.0, 75, 500, 750, 100, 0.01, 0.1);
+        this(50, 50, 2.5, 25, 0.5, 0.1, 2.0, 75, 500, 750, 100, 0.065, 0.3);
     }
 
     public SimulationConfig(double areaWidth, double areaHeight, double maxSpeed, int stepsPerSecond,
